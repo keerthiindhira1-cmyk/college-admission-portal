@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Portal</title>
+
+```
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navigation Bar -->
+<nav>
+    <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        College Admission Portal
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- Home Section -->
+<section id="home" class="hero">
+
+    <div class="hero-content">
+        <h1>Welcome to College Admission Portal</h1>
+
+        <p>
+            Apply for your favorite course easily through our online
+            admission portal.
+        </p>
+
+        <button onclick="applyNow()">Apply Now</button>
+    </div>
+
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="about">
+
+    <h2>About Our Portal</h2>
+
+    <p>
+        The College Admission Portal is an online platform designed to
+        simplify the college admission process. Students can register,
+        apply for courses, upload documents, and check their admission
+        status easily.
+    </p>
+
+</section>
+
+
+<!-- Courses Section -->
+<section id="courses" class="courses">
+
+    <h2>Available Courses</h2>
+
+    <div class="course-container">
+
+        <div class="course-card">
+            <i class="fa-solid fa-computer"></i>
+            <h3>BCA</h3>
+            <p>Bachelor of Computer Applications</p>
+        </div>
+
+        <div class="course-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>B.Sc Computer Science</h3>
+            <p>Learn programming and computer technologies.</p>
+        </div>
+
+        <div class="course-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>BBA</h3>
+            <p>Bachelor of Business Administration</p>
+        </div>
+
+        <div class="course-card">
+            <i class="fa-solid fa-calculator"></i>
+            <h3>B.Com</h3>
+            <p>Bachelor of Commerce</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+
+    <h2>Contact Us</h2>
+
+    <p><i class="fa-solid fa-envelope"></i> admission@college.com</p>
+    <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+    <p><i class="fa-solid fa-location-dot"></i> Tamil Nadu, India</p>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <p>© 2026 College Admission Portal | All Rights Reserved</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+```
+
+</body>
+</html>
+
+/* Admission Form */
+
+
+.admission-form {
+    min-height: 100vh;
+    padding: 50px 10%;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 255, 255, 0.88)
+        ),
+        url("https://images.unsplash.com/photo-1523240795612-9a054b0db644");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.admission-form h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 30px;
+}
+
+#admissionForm {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+#admissionForm h2 {
+    color: #003366;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 8px;
+}
+
+#admissionForm label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#admissionForm input,
+#admissionForm select,
+#admissionForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#admissionForm textarea {
+    height: 100px;
+}
+
+#admissionForm button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#admissionForm button:hover {
+    background-color: #00509e;
+}
+
+/* Registration Page */
+
+.registration-page {
+    background-color: #f4f7fa;
+    min-height: 80vh;
+    padding: 50px 10%;
+}
+
+.registration-page h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 30px;
+}
+
+#registrationForm {
+    max-width: 550px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+#registrationForm label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#registrationForm input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#registrationForm button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-text a {
+    color: #003366;
+    font-weight: bold;
+}
+
+/* Login Page */
+
+.login-page {
+    background-color: #f4f7fa;
+    min-height: 80vh;
+    padding: 50px 10%;
+}
+
+.login-page h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 30px;
+}
+
+#loginForm {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+#loginForm label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#loginForm button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#loginForm button:hover {
+    background-color: #00509e;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-text a {
+    color: #003366;
+    font-weight: bold;
+}
+
+/* Student Dashboard */
+
+.dashboard {
+    background-color: #f4f7fa;
+    min-height: 80vh;
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.dashboard h1 {
+    color: #003366;
+    margin-bottom: 35px;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    text-align: left;
+}
+
+.dashboard-card h3 {
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.dashboard-card p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.pending {
+    color: orange !important;
+    font-weight: bold;
+}
+
+.approved {
+    color: green !important;
+    font-weight: bold;
+}
+
+.logout-btn {
+    margin-top: 35px;
+    padding: 12px 35px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #00509e;
+}
+
+
+/* Admin Dashboard */
+
+.admin-dashboard {
+    background-color: #f4f7fa;
+    min-height: 80vh;
+    padding: 50px 8%;
+}
+
+.admin-dashboard h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 40px;
+}
+
+.admin-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    width: 220px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.stat-card h2 {
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    color: #555;
+    font-weight: bold;
+}
+
+.application-list {
+    margin-top: 50px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.application-list h2 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.application-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.application-list th,
+.application-list td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.application-list th {
+    background-color: #003366;
+    color: white;
+}
+
+.application-list button {
+    padding: 8px 15px;
+    margin: 3px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #003366;
+    color: white;
+}
+
+.application-list button:hover {
+    background-color: #00509e;
+}
+
+
+
+
+/* Home Page Graduation Background */
+
+.hero {
+    min-height: 600px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.hero-content button {
+    padding: 14px 30px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+/* Login Extra Features */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    width: 100%;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-options a {
+
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Register Page Background */
+
+.registration-page {
+    background:
+        linear-gradient(rgba(244, 247, 250, 0.35),
+                        rgba(244, 247, 250, 0.35)),
+        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Login Page Background */
+
+.login-page {
+    background:
+        linear-gradient(rgba(244, 247, 250, 0.35),
+                        rgba(244, 247, 250, 0.35)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Student Dashboard Background */
+
+.dashboard {
+    background:
+        linear-gradient(rgba(244, 247, 250, 0.35),
+                        rgba(244, 247, 250, 0.35)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Admission Page Background */
+
+.admission-form {
+    background:
+        linear-gradient(rgba(244, 247, 250, 0.35),
+                        rgba(244, 247, 250, 0.35)),
+        url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1600&q=80');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Admin Dashboard Background */
+
+.admin-dashboard {
+    background:
+        linear-gradient(rgba(244, 247, 250, 0.35),
+                        rgba(244, 247, 250, 0.35)),
+        url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Professional Center Alignment for Home Page */
+
+#about,
+#courses {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+#about h2,
+#courses h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Course Section Center */
+
+.course-container,
+.courses-container,
+.course-list {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Course Cards Professional Design */
+
+.course-card {
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Home Page Background */
+
+.hero {
+    min-height: 500px;
+
+    background:
+        linear-gradient(rgba(0, 51, 102, 0.35),
+                        rgba(0, 51, 102, 0.35)),
+        url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+}
+
+
+/* Navigation Bar - Black and Horizontal */
+
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block !important;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #cccccc;
+}
+
+
+
+/* Professional Contact Section */
+
+#contact {
+    background-color: #f4f7fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+#contact p {
+    font-size: 17px;
+    color: #444;
+    margin: 15px 0;
+}
+
+#contact p:hover {
+    color: #003366;
+}
+
+/* Professional Footer */
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+;.login-options input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+
+
+
+
+
+.login-options input[type="checkbox"] {
+
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 26px;
+    cursor: pointer;
+}

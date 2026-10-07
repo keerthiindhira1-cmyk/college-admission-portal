@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🎓 College Admission Portal - Admin</div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+    </ul>
+</nav>
+
+<section class="admin-dashboard">
+
+    <h1>Admin Dashboard</h1>
+
+    <div class="admin-stats">
+
+        <div class="stat-card">
+            <h2 id="totalApplications">0</h2>
+            <p>Total Applications</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="approvedApplications">0</h2>
+            <p>Approved Applications</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="pendingApplications">0</h2>
+            <p>Pending Applications</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="rejectedApplications">0</h2>
+            <p>Rejected Applications</p>
+        </div>
+
+    </div>
+
+    <div class="application-list">
+
+        <h2>Student Applications</h2>
+
+        <table>
+            <thead>
+                
+                <tr>
+    <th>Student Name</th>
+    <th>Course</th>
+    <th>Marks</th>
+    <th>Documents</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+            </thead>
+
+            <tbody id="applicationTable">
+                <!-- Student applications will appear here -->
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 College Admission Portal | Admin Panel</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+function loadApplications() {
+
+    let applications =
+        JSON.parse(localStorage.getItem("applications")) || [];
+
+    let table = document.getElementById("applicationTable");
+
+    table.innerHTML = "";
+
+    let approved = 0;
+    let pending = 0;
+    let rejected = 0;
+
+    applications.forEach((student, index) => {
+
+        if (student.status === "Approved") {
+            approved++;
+        } 
+        else if (student.status === "Rejected") {
+            rejected++;
+        } 
+        else {
+            pending++;
+        }
+
+        let row = document.createElement("tr");
+
+        
+        row.innerHTML = `
+    <td>${student.name}</td>
+    <td>${student.course}</td>
+    <td>${student.marks || "-"}</td>
+    <td>${student.documents && student.documents.length > 0 
+        ? student.documents.join("<br>") 
+        : "-"}</td>
+    <td>${student.status}</td>
+
+    <td>
+        <button onclick="approveApplication(${index})">
+            Approve
+        </button>
+
+        <button onclick="rejectApplication(${index})">
+            Reject
+        </button>
+    </td>
+`;
+
+        table.appendChild(row);
+    });
+
+    document.getElementById("totalApplications").textContent =
+        applications.length;
+
+    document.getElementById("approvedApplications").textContent =
+        approved;
+
+    document.getElementById("pendingApplications").textContent =
+        pending;
+
+    document.getElementById("rejectedApplications").textContent =
+        rejected;
+}
+
+
+function approveApplication(index) {
+
+    let applications =
+        JSON.parse(localStorage.getItem("applications")) || [];
+
+    applications[index].status = "Approved";
+
+    localStorage.setItem(
+        "applications",
+        JSON.stringify(applications)
+    );
+
+    loadApplications();
+}
+
+
+function rejectApplication(index) {
+
+    let applications =
+        JSON.parse(localStorage.getItem("applications")) || [];
+
+    applications[index].status = "Rejected";
+
+    localStorage.setItem(
+        "applications",
+        JSON.stringify(applications)
+    );
+
+    loadApplications();
+}
+
+
+loadApplications();
+
+</script>
+
+</body>
+</html>
